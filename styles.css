@@ -1,0 +1,179 @@
+* {
+    margin: 0;
+    padding: 0;
+    /* box-sizing: border-box; */
+    outline: white solid 2px;
+    color:white;
+}
+
+body {
+    background-color: #00b894;
+    font-family: 'Montserrat', sans-serif;
+    /* display: flex;
+    justify-content: center; */
+}
+
+#ringClock {
+    padding:1vw;
+    max-height:100vh;
+}
+
+#clock {
+    position: relative;
+    width: 40vw;
+    height: 40vw;
+}
+
+#hourRing {
+    width:100%;
+    height:100%;
+    background-color: #ecf0f1;
+    position: absolute;
+    top:0;
+    left:0;
+    border-radius: 50%;
+    visibility: hidden;
+}
+
+#minuteRing {
+    background-color: #8395a7;
+    width: 90%;
+    height: 90%;
+    position: absolute;
+    top:50%;
+    left:50%;
+    margin-left:-45%;
+    margin-top:-45%;
+    border-radius: 50%;
+    z-index: 2;
+}
+
+#secondRing {
+    background-color: #576574;
+    width: 80%;
+    height: 80%;
+    position: absolute;
+    top:50%;
+    left:50%;
+    margin-left:-40%;
+    margin-top:-40%;
+    border-radius: 50%;
+    z-index: 8;
+}
+
+.front {
+    background-color: #222f3e;
+    width: 70%;
+    height: 70%;
+    position: absolute;
+    top:50%;
+    left:50%;
+    margin-left:-35%;
+    margin-top:-35%;
+    border-radius: 50%;
+    z-index: 10;
+}
+
+#bellIcon {
+    font-size: 20vw;
+    color:white;
+    position: absolute;
+    top:50%;
+    left:50%;
+    margin-left:-10vw;
+    margin-top:-10vw;
+    visibility: hidden;
+}
+
+.btn {
+    background-color: #0984e3;
+    color:white;
+    font-size: 2.5vw;
+    padding:0.5vw 2vw;
+    height:5vw;
+    border-radius:5vw;
+    border:solid white 3px;
+}
+
+.btn-cntr-plus {
+    margin-left: -0.65vw;
+    margin-top: -0.3vw;
+    font-size: 3vw;
+}
+
+.btn-cntr-minus {
+    margin-left: -0.4vw;
+    margin-top: -0.3vw;
+    font-size: 3vw;
+}
+
+.lg {
+    width:10vw;
+}
+
+.sm {
+    width:5vw;
+}
+
+#pomo {
+    text-align: center;
+    color:white;
+    font-size: 4vw;
+    /* width: 40vw; */
+    white-space: nowrap;
+    position: absolute;
+    top:50%;
+    left:50%;
+    margin-left:-13vw;
+    margin-top:-2vw;
+}
+
+#controls {
+    width:100%;
+    position: absolute;
+    top:40vw;
+    left:50%;
+    margin-left:-5vw;
+    z-index: 20;
+}
+
+#controls > * {
+    margin:0.5vw 0;
+}
+
+#counter {
+    width:100%;
+    position: absolute;
+    top:53vw;
+    left:50%;
+    margin-left:-50%;
+    z-index: 20;
+    text-align: center;
+}
+
+.material-icons {
+    color:white;
+    
+}
+
+.material-icons.md-36 { font-size: 5vw; }
+
+#header {
+    position: absolute;
+    top:0;
+    left: 0;
+    padding:1vw;
+}
+
+#info-mod {
+    visibility: hidden;
+    text-align: center;
+    position: absolute;
+    width:30vw;
+}
+
+#info {
+    cursor: pointer;
+    margin: 0.5vw;
+}
+

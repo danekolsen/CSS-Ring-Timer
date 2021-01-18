@@ -1,0 +1,399 @@
+/* CSS RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* outline: white solid 2px; */
+}
+
+/* VARIABLES FOR RING CLOCK SIZE AND COLOR SETTING */
+
+:root {
+    --hour-ring-size: 300px;
+    --min-ring-size: 300px;
+    --sec-ring-size: 300px;
+    --front-ring-size: 300px;
+
+    --text-color: white;
+    --body-color: #222222;
+    --controls-color: #222222;
+    --button-color: #2ed573;
+    --hour-ring-color: #222222;
+    --minute-ring-color: #222222;
+    --second-ring-color: #222222;
+    --front-ring-color: #222222;
+}
+
+/* UNIVERSAL STYLINGS */
+
+body {
+    text-align: center;
+    display: grid;
+    background-color: var(--body-color);
+    font-family: 'Montserrat', sans-serif;
+    color: var(--text-color);
+    height: 100vh;
+    width: 100vw;
+}
+
+/* LABELS FOR CSS GRID */
+
+#header {
+    grid-area: header;
+}
+
+#ringClock {
+    grid-area: ringClock;
+}
+
+#counter {
+    grid-area: counter;
+}
+
+#controls {
+    grid-area: controls;
+}
+
+
+
+
+/* INFO MODAL */
+
+#info-mod {
+    visibility: hidden;
+    text-align: center;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 15px;
+    width: 97vw;
+    color: white;
+    border: #3742fa solid 5px;
+    border-radius: 20px;
+    z-index: 1000;
+}
+
+#info {
+    cursor: pointer;
+    margin: 0.5vw;
+}
+
+#daneWeb {
+    color: white;
+}
+
+/* RINGCLOCK */
+
+/* #hourRing {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--hour-ring-size);
+    height: var(--hour-ring-size);
+    background-color: var(--hour-ring-color);
+    margin: 0 auto;
+    border-radius: 50%;
+} */
+
+#ringClock {
+    width: 100%;
+}
+
+#minuteRing {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--minute-ring-color);
+    width: var(--min-ring-size);
+    height: var(--min-ring-size);
+    margin: 50px auto;
+    border-radius: 50%;
+}
+
+#secondRing {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--second-ring-color);
+    width: var(--sec-ring-size);
+    height: var(--sec-ring-size);
+    margin: 50px auto;
+    border-radius: 50%;
+}
+
+.front {
+    position: relative;
+    background-color: var(--front-ring-color);
+    width: var(--front-ring-size);
+    height: var(--front-ring-size);
+    margin: 50px auto;
+    border-radius: 50%;
+}
+
+#pomo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 36px;
+    white-space: nowrap;
+}
+
+#bellIcon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ff4757;
+    visibility: hidden;
+    font-size: 200px;
+}
+
+/* CONTROL BUTTONS */
+
+#checks {
+    max-height: 85%;
+    overflow: scroll;
+}
+
+.btn {
+    background-color: var(--button-color);
+    border: #3742fa solid 3px;
+    color: white;
+    font-size: 4vh;
+    height: 8vh;
+    margin: 5px;
+}
+
+.btn:active {
+    background-color: rgb(116, 116, 116);
+    /* color: black; */
+}
+
+.lg {
+    background-color: seagreen;
+    width: 40%;
+    border-radius: 37.5px;
+}
+
+.sm {
+    width: 8vh;
+    border-radius: 50%;
+    background-color: #222222;
+    position: relative;
+}
+
+.material-icons.md-36 {
+    font-size: 15vw;
+    color: #2ed573;
+}
+
+#upDownBtns {
+    width: 40%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+#counter {
+    border-radius: 20px 20px 0px 0px;
+    border-style: solid solid none solid;
+    border-color: #3742fa;
+    border-width: 5px;
+}
+
+#controls {
+    border-radius: 0px 0px 20px 20px;
+    border-style: none solid solid solid;
+    border-color: #3742fa;
+    border-width: 5px;
+}
+
+/* SIZE: PHONE IN PORTRAIT MODE */
+
+@media only screen and (orientation:portrait) and (max-width: 600px) {
+    body {
+        grid-template-rows: auto auto 20vh auto;
+        grid-template-areas:
+            'header'
+            'ringClock'
+            'counter'
+            'controls';
+    }
+
+    #info-mod {
+        font-size: 20px;
+    }
+
+    #header {
+        font-size: 24px;
+    }
+}
+
+/* SIZE: PHONE IN LANDSCAPE MODE */
+
+@media only screen and (orientation:landscape) and (max-width: 900px) {
+    body {
+        grid-template-rows: repeat(2, 50vh);
+        grid-template-columns: 10vw 50vw 40vw;
+        grid-template-areas:
+            'header ringClock counter'
+            'header ringClock controls'
+        ;
+    }
+
+    #ringClock {
+        align-self: center;
+    }
+
+    #counter {
+        border-radius: 20px 20px 0px 0px;
+        border-style: solid solid none solid;
+        font-size: 16px;
+    }
+
+    #controls {
+        border-radius: 0px 0px 20px 20px;
+        border-style: none solid solid solid;
+    }
+
+    .btn {
+        height: 15vh;
+        font-size: 20px;
+    }
+
+    .lg {
+        width: 80%;
+    }
+
+    .sm {
+        width: 15vh;
+    }
+
+    #upDownBtns {
+        width: 80%;
+    }
+
+    .material-icons.md-36 {
+        font-size: 30px;
+    }
+
+}
+
+/* SIZE: TABLET IN PORTRAIT MODE */
+
+@media only screen and (orientation:portrait) and (min-width:600px) and (max-width: 900px) {
+
+    body {
+        grid-template-rows: 5vh 58vh 19vh 18vh;
+        grid-template-columns: 12.5vw 75vw 12.5vw;
+        grid-template-areas:
+            'header header header'
+            '. ringClock .'
+            'counter counter counter'
+            'controls controls controls'
+        ;
+    }
+
+    #header {
+        font-size: 30px;
+    }
+
+    #info-mod {
+        border-radius: 10vw;
+        width: 99%;
+    }
+
+    #pomo {
+        font-size: 50px;
+    }
+
+    #bellIcon {
+        font-size: 300px;
+    }
+
+    #counter {
+        font-size: 24px;
+        border-radius: 20px 20px 0px 0px;
+    }
+
+    #controls {
+        border-radius: 0px 0px 20px 20px;
+    }
+
+    .material-icons.md-36 {
+        font-size: 70px;
+    }
+}
+
+/* SIZE: TABLET IN LANDSCAPE MODE */
+
+@media only screen and (orientation:landscape) and (min-width:900px) and (max-width: 1200px) {
+    body {
+        grid-template-rows: 3vh 75vh 22vh;
+        grid-template-columns: repeat(4, 25vw);
+        grid-template-areas:
+            'header header header header'
+            '. ringClock ringClock .'
+            'counter counter controls controls'
+        ;
+    }
+
+    #counter {
+        border-radius: 20px 0 0 20px;
+        border-style: solid none solid solid;
+    }
+
+    #controls {
+        border-radius: 0 20px 20px 0;
+        border-style: solid solid solid none;
+    }
+
+    #info-mod {
+        width: 100%;
+    }
+
+    .material-icons.md-36 {
+        font-size: 40px;
+    }
+
+    #bellIcon {
+        font-size: 300px;
+    }
+
+}
+
+/* SIZE: DESKTOP AND UP */
+
+@media only screen and (min-width:1201px) {
+    body {
+        grid-template-rows: 3vh 75vh 22vh;
+        grid-template-columns: repeat(4, 25vw);
+        grid-template-areas:
+            'header header header header'
+            'ringClock ringClock counter counter'
+            'ringClock ringClock controls controls'
+        ;
+    }
+
+    #counter {
+        border-radius: 20px 20px 0 0;
+        border-style: solid solid none solid;
+    }
+
+    #controls {
+        border-radius: 0 0 20px 20px;
+        border-style: none solid solid solid;
+    }
+
+    #info-mod {
+        width: 100%;
+    }
+
+    .material-icons.md-36 {
+        font-size: 80px;
+    }
+
+    #bellIcon {
+        font-size: 500px;
+    }
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Ring Timer</title>
+  <!-- <link rel="stylesheet" href="styles.css"> -->
+  <link rel="stylesheet" href="styles2.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.css"
+    integrity="sha256-a2tobsqlbgLsWs7ZVUGgP5IvWZsx8bTNQpzsqCSm5mk=" crossorigin="anonymous" />
+</head>
+
+<body onresize="setClockSize()">
+  <div id="header">
+    <h1>Ring Timer <i id="info" class="material-icons">info</i></h1>
+    <div id="info-mod">
+      <p>A simple, adjustable, pomodoro-style timer. Enjoy!</p>
+      <p>Each time the clock runs out, a check will appear to indicate a complete session, helping you keep track of how
+        many pomodoro sessions you have completed in a day.</p>
+      <p>This app uses the latest CSS which might not work in some browsers yet. Sorry!</p>
+      <p>Crafted with ❤️ by <a id="daneWeb" href="http://www.danekolsen.com">Dane Olsen</a>.</p>
+    </div>
+  </div>
+  <div id="ringClock">
+    <!-- <div id="hourRing"> -->
+      <div id="minuteRing">
+        <div id="secondRing">
+          <div class="front">
+            <h2 id="pomo">
+              <span id="hourText"></span>
+              <span id="minuteText"></span>
+              <span id="secondText"></span>
+            </h2>
+            <i id="bellIcon" class="material-icons">notification_important</i>
+          </div>
+        </div>
+      </div>
+    <!-- </div> -->
+  </div>
+  <div id="counter">
+    <p># of completed sessions:</p>
+    <div id="checks"></div>
+  </div>
+  <div id="controls">
+    <button class="btn lg" id="clock-btn" onclick="clockSwitch()">Start</button>
+    <div id="upDownBtns">
+      <button class="btn sm" id="plus" onclick="changeTime('+')"><span class="btn-cntr-plus">+</span></button>
+      <button class="btn sm" id="minus" onclick="changeTime('-')"><span class="btn-cntr-minus">-</span></button>
+    </div>
+  </div>
+</body>
+
+</html>
+
+<audio id="myAudio">
+  <source src="./sound/ding.mp3" type="audio/mpeg">
+</audio>
+
+<script src="scripts.js"></script>
